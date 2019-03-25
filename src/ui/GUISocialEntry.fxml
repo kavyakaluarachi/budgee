@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="554.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.SocialEntryController">
+   <children>
+      <ImageView fx:id="backgroundImage" fitHeight="554.0" fitWidth="600.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TextField fx:id="socialEntryName" layoutX="409.0" layoutY="117.0" />
+      <TextField fx:id="socialEntryPrice" layoutX="409.0" layoutY="178.0" />
+      <TextField fx:id="socialEntryUnits" layoutX="409.0" layoutY="236.0" />
+      <TextField fx:id="socialType" layoutX="409.0" layoutY="350.0" />
+      <Label layoutX="407.0" layoutY="94.0" text="Entry Name:" textFill="WHITE" />
+      <Label layoutX="409.0" layoutY="155.0" text="Entry Price:" textFill="WHITE" />
+      <Label layoutX="411.0" layoutY="213.0" text="Number Of Units:" textFill="WHITE" />
+      <Label layoutX="410.0" layoutY="277.0" text="Entry Type:" textFill="WHITE" />
+      <Text fill="WHITE" layoutX="145.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Social Entry!">
+         <font>
+            <Font name="Rockwell" size="34.0" />
+         </font>
+      </Text>
+      <Button fx:id="socialAddEntry" layoutX="272.0" layoutY="405.0" mnemonicParsing="false" onAction="#createSocialEntryButtonPressed" text="Create Entry" />
+      <Button fx:id="socialBackToMain" layoutX="480.0" layoutY="405.0" mnemonicParsing="false" onAction="#socialBackToMainButtonPressed" text="Back to Main" />
+      <TextArea fx:id="socialTextArea" layoutX="122.0" layoutY="439.0" prefHeight="92.0" prefWidth="456.0" />
+      <Button fx:id="socialDeleteEntry" layoutX="378.0" layoutY="405.0" mnemonicParsing="false" onAction="#deleteButtonPushed" text="Delete Entry" />
+      <Text fill="WHITE" layoutX="409.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter either: Night out, eating out, trip, gift, shopping or other  " wrappingWidth="178.37451171875" />
+      <TableView fx:id="socialEntryTableView" layoutX="15.0" layoutY="89.0" prefHeight="149.0" prefWidth="345.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" onEditCommit="#changeEntryNameCellEvent" prefWidth="65.0" text="Name" />
+          <TableColumn fx:id="priceColumn" onEditCommit="#changeEntryPriceCellEvent" prefWidth="60.0" text="Price" />
+            <TableColumn fx:id="numUnitsColumn" onEditCommit="#changeEntryUnitsCellEvent" prefWidth="76.0" text="Num Units" />
+            <TableColumn fx:id="totalCostColumn" prefWidth="73.0" text="Total Cost" />
+            <TableColumn fx:id="typeColumn" onEditCommit="#changeEntryTypeCellEvent" prefWidth="70.0" text="Type" />
+        </columns>
+      </TableView>
+      <Button fx:id="viewNightOutEntries" layoutX="20.0" layoutY="281.0" mnemonicParsing="false" onAction="#viewNightOutsButtonPressed" prefHeight="27.0" prefWidth="167.0" text="View Night Out Entries" />
+      <Button fx:id="viewEatingOutEntries" layoutX="20.0" layoutY="308.0" mnemonicParsing="false" onAction="#viewEatingOutButtonPressed" prefHeight="27.0" prefWidth="167.0" text="View Eating Out Entries" />
+      <Button fx:id="viewTripEntries" layoutX="20.0" layoutY="337.0" mnemonicParsing="false" onAction="#viewTripButtonPressed" prefHeight="27.0" prefWidth="167.0" text="View Trip Entries" />
+      <Button fx:id="viewGiftEntries" layoutX="20.0" layoutY="364.0" mnemonicParsing="false" onAction="#viewGiftsButtonPressed" prefHeight="27.0" prefWidth="167.0" text="View Gift Entries" />
+      <Button fx:id="viewShoppingEntries" layoutX="20.0" layoutY="392.0" mnemonicParsing="false" onAction="#viewShoppingButtonPressed" prefHeight="27.0" prefWidth="167.0" text="View Shopping Entries" />
+      <Button fx:id="viewOtherEntriesButton" layoutX="20.0" layoutY="254.0" mnemonicParsing="false" onAction="#viewOtherButtonPressed" prefHeight="27.0" prefWidth="167.0" text="View Other Entries" />
+      <TextArea fx:id="budgetLeftTextArea" layoutX="218.0" layoutY="291.0" prefHeight="62.0" prefWidth="132.0" />
+      <Text fill="WHITE" layoutX="218.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget Left:" />
+      <MenuButton fx:id="menuButton" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="MenuButton">
+        <items>
+          <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#saveBudgetClicked" text="Save Budget" />
+          <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#loadBudgetClicked" text="Load Budget" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>

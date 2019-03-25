@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="554.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.SchoolEntryController">
+   <children>
+      <ImageView fx:id="backgroundImage" fitHeight="554.0" fitWidth="625.0" layoutY="3.0" pickOnBounds="true" />
+      <TextField fx:id="schoolEntryName" layoutX="433.0" layoutY="82.0" />
+      <TextField fx:id="schoolEntryType" layoutX="433.0" layoutY="253.0" />
+      <TextField fx:id="schoolNumberUnits" layoutX="433.0" layoutY="187.0" />
+      <TextField fx:id="schoolEntryPrice" layoutX="433.0" layoutY="133.0" />
+      <Label layoutX="433.0" layoutY="60.0" text="Entry Name:" textFill="WHITE" />
+      <Label layoutX="436.0" layoutY="116.0" text="Entry Price:" textFill="WHITE" />
+      <Label layoutX="329.0" layoutY="233.0" text="Entry Type: School Supply, Trip, Club, Team" textFill="WHITE" />
+      <Label layoutX="436.0" layoutY="170.0" text="Number of Units:" textFill="WHITE" />
+      <TextArea fx:id="schoolTextArea" layoutX="53.0" layoutY="400.0" prefHeight="101.0" prefWidth="516.0" />
+      <Button fx:id="schoolCreateEntry" layoutX="265.0" layoutY="343.0" mnemonicParsing="false" onAction="#createSchoolEntryButtonPressed" text="Create Entry" />
+      <Button fx:id="schoolBackToMain" layoutX="469.0" layoutY="343.0" mnemonicParsing="false" onAction="#schoolBackToMainButtonPressed" text="Back To Main" />
+      <Button fx:id="schoolDeleteEntry" layoutX="362.0" layoutY="343.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="27.0" prefWidth="105.0" text="Delete Entry" />
+      <TableView fx:id="schoolEntryTableView" layoutX="23.0" layoutY="69.0" prefHeight="159.0" prefWidth="398.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" onEditCommit="#changeEntryNameCellEvent" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="priceColumn" onEditCommit="#changeEntryPriceCellEvent" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="numUnitsColumn" onEditCommit="#changeEntryUnitsCellEvent" prefWidth="75.0" text="Num Units" />
+            <TableColumn fx:id="totalCostColumn" prefWidth="75.0" text="Total Cost" />
+            <TableColumn fx:id="entryTypeColumn" onEditCommit="#changeEntryTypeCellEvent" prefWidth="75.0" text="Entry Type" />
+        </columns>
+      </TableView>
+      <Button fx:id="viewSchoolSupplies" layoutX="23.0" layoutY="240.0" mnemonicParsing="false" onAction="#viewSchoolSuppliesEntriesButtonPressed" text="View School Supplies" />
+      <Button fx:id="viewSchoolTrips" layoutX="23.0" layoutY="265.0" mnemonicParsing="false" onAction="#viewTripsEntriesButtonPressed" prefHeight="27.0" prefWidth="150.0" text="View School Trips" />
+      <Button fx:id="viewClubs" layoutX="23.0" layoutY="292.0" mnemonicParsing="false" onAction="#viewClubsEntriesButtonPressed" prefHeight="27.0" prefWidth="150.0" text="View Clubs" />
+      <Button layoutX="23.0" layoutY="319.0" mnemonicParsing="false" onAction="#viewTeamsEntriesButtonPressed" prefHeight="27.0" prefWidth="150.0" text="View Teams" />
+      <TextArea fx:id="budgetLeftTextArea" layoutX="202.0" layoutY="266.0" prefHeight="39.0" prefWidth="89.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextArea>
+      <Text fill="WHITE" layoutX="202.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget Left:" />
+      <Text fill="WHITE" layoutX="151.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New School Entries" wrappingWidth="349.7309265136719">
+         <font>
+            <Font name="Chalkduster" size="31.0" />
+         </font>
+      </Text>
+      <MenuButton fx:id="menuButton" layoutX="23.0" layoutY="29.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem fx:id="saveBudget" mnemonicParsing="false" onAction="#saveBudgetClicked" text="Save Budget" />
+          <MenuItem fx:id="loadBudget" mnemonicParsing="false" onAction="#loadBudgetClicked" text="Load Budget" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>

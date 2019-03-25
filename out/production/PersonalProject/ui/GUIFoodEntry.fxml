@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="554.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.FoodEntryController">
+   <children>
+      <ImageView fx:id="backgroundImage" fitHeight="554.0" fitWidth="625.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="foodCreateEntry" layoutX="222.0" layoutY="393.0" mnemonicParsing="false" onAction="#createFoodEntryButtonPressed" prefHeight="40.0" prefWidth="130.0" text="Create Entry" />
+      <Button fx:id="foodBackToMain" layoutX="465.0" layoutY="394.0" mnemonicParsing="false" onAction="#foodBackToMainButtonPressed" prefHeight="40.0" prefWidth="130.0" text="Back to Main" />
+      <Label layoutX="443.0" layoutY="88.0" text="Entry Name:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="142.0" text="Entry price:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="444.0" layoutY="199.0" text="Number of Units:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="255.0" text="Food type: (Vegetable, Fruit, Meat, Grain, Snack)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="foodEntryName" layoutX="444.0" layoutY="107.0" promptText="Name of your food" />
+      <TextField fx:id="foodEntryPrice" layoutX="445.0" layoutY="161.0" promptText="Integer price" />
+      <TextField fx:id="foodEntryUnits" layoutX="444.0" layoutY="218.0" promptText="Integer units" />
+      <TextField fx:id="foodType" layoutX="444.0" layoutY="278.0" promptText="Enter the food type" />
+      <Text layoutX="196.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Food Entry!">
+         <font>
+            <Font name="Avenir Next Condensed Heavy" size="43.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="foodTextArea" layoutX="75.0" layoutY="441.0" prefHeight="89.0" prefWidth="507.0" />
+      <TableView fx:id="foodEntryTableView" layoutX="18.0" layoutY="72.0" prefHeight="159.0" prefWidth="346.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" onEditCommit="#changeEntryNameCellEvent" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="priceColumn" onEditCommit="#changeEntryPriceCellEvent" prefWidth="49.0" text="Price" />
+            <TableColumn fx:id="totalCostColumn" prefWidth="74.0" text="Total Cost" />
+            <TableColumn fx:id="foodTypeColumn" onEditCommit="#changeEntryTypeCellEvent" prefWidth="75.0" text="Food Type" />
+            <TableColumn fx:id="numUnitsColumn" onEditCommit="#changeEntryUnitsCellEvent" prefWidth="77.0" text="Num Units" />
+        </columns>
+      </TableView>
+      <Button fx:id="viewVegetablesButton" layoutX="18.0" layoutY="317.0" mnemonicParsing="false" onAction="#viewVegetableEntriesButtonPressed" text="View Vegetables in Budget" />
+      <Button fx:id="viewFruitsButton" layoutX="18.0" layoutY="344.0" mnemonicParsing="false" onAction="#viewFruitEntriesButtonPressed" prefHeight="27.0" prefWidth="183.0" text="View Fruits in Budget" />
+      <Button fx:id="viewMeatsButton" layoutX="18.0" layoutY="371.0" mnemonicParsing="false" onAction="#viewMeatEntriesButtonPressed" prefHeight="27.0" prefWidth="183.0" text="View Meat in Budget" />
+      <Button fx:id="viewGrainsButton" layoutX="18.0" layoutY="291.0" mnemonicParsing="false" onAction="#viewGrainEntriesButtonPressed" prefHeight="27.0" prefWidth="183.0" text="View Grains in Budget" />
+      <Button fx:id="viewSnacksButton" layoutX="18.0" layoutY="400.0" mnemonicParsing="false" onAction="#viewSnackEntriesButtonPressed" prefHeight="27.0" prefWidth="183.0" text="View Snacks in Budget" />
+      <Button fx:id="viewDairyButton" layoutX="18.0" layoutY="264.0" mnemonicParsing="false" onAction="#viewDairyEntriesButtonPressed" prefHeight="27.0" prefWidth="183.0" text="View Dairy in Budget" />
+      <Button layoutX="352.0" layoutY="394.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="40.0" prefWidth="110.0" text="Delete Entry" />
+      <Label layoutX="261.0" layoutY="291.0" text="Budget Left:" />
+      <TextArea fx:id="budgetLeftArea" layoutX="261.0" layoutY="309.0" prefHeight="71.0" prefWidth="146.0" />
+      <MenuButton layoutX="7.0" layoutY="9.0" mnemonicParsing="false" text="Menu">
+        <items>
+          <MenuItem fx:id="saveBudget" mnemonicParsing="false" onAction="#saveBudgetClicked" text="Save Budget" />
+          <MenuItem mnemonicParsing="false" onAction="#showButtonPressed" text="Load Budget" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>
